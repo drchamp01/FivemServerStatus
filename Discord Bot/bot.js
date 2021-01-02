@@ -198,9 +198,9 @@ exports.start = function(SETUP) {
           const fieldCount = 3;
           const fields = new Array(fieldCount);
           fields.fill('');
-          // for (var i=0;i<players.length;i++) {
-          //   fields[i%4 >= 2 ? 1 : 0] += `${players[i].name}${i % 2 === 0 ? '\u200e' : '\n\u200f'}`;
-          // }
+           for (var i=0;i<players.length;i++) {
+             fields[i%4 >= 2 ? 1 : 0] += `${players[i].name}${i % 2 === 0 ? '\u200e' : '\n\u200f'}`;
+           }
           fields[0] = `**Inwoners:**\n`;
           for (var i=0;i<players.length;i++) {
             fields[(i+1)%fieldCount] += `${players[i].name.substr(0,12)}\n`; // first 12 characters of players name
